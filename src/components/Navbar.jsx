@@ -3,7 +3,7 @@ const Navbar = () => {
     <nav
       className="
         absolute top-6 left-1/2 -translate-x-1/2
-        w-[90%] max-w-[1440px]
+        w-[90%] max-w-360
         px-12 py-3
         rounded-[20px]
         bg-black/30 backdrop-blur-md
@@ -18,7 +18,7 @@ const Navbar = () => {
 
       {/* Nav links */}
       <ul className="hidden md:flex gap-10">
-        <li className="font-extrabold text-white text-[16px] tracking-[0.1em] capitalize">
+        <li className="font-extrabold text-white text-[16px] tracking-widest capitalize">
           Home
         </li>
         {["About Us", "Services", "Works", "Blogs", "Careers"].map((item) => (
@@ -27,7 +27,7 @@ const Navbar = () => {
             className="
               font-normal
               text-[16px]
-              tracking-[0.1em]
+              tracking-widest
               capitalize
               text-[#C7C4C4]
               hover:text-white
@@ -52,7 +52,7 @@ const Navbar = () => {
             inset_0_4px_16.5px_rgba(221,81,35,0.18)
           ]
           text-[16px]
-          tracking-[0.1em]
+          tracking-widest
           font-medium
           hover:bg-[rgba(241,89,37,0.2)]
           transition
