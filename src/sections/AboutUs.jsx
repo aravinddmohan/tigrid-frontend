@@ -1,46 +1,46 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import AboutCarousel from "../components/AboutCarousel";
 
 const AboutUs = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(-1);
+  const paragraphRef = useRef(null);
+
+  const paragraphOne =
+    "We are TIGRID, a trailblazing IT company headquartered in the dynamic hub of TechnoPark, Trivandrum. With a visionary and passionate team of experts, we proudly stand as the foremost branding and development company in Kerala. At TIGRID, we don't just provide services; we craft digital experiences. We take pride in continuing to offer technical and digital solutions for business worldwide.";
+
+  const paragraphTwo =
+    "Choose us as your trusted partner for comprehensive IT services that drive success.";
+
+  const words = paragraphOne.split(" ");
 
   useEffect(() => {
-  const targets = document.querySelectorAll(".about-sentence");
-  const viewportCenter = window.innerHeight * 0.65;
+    const handleScroll = () => {
+      if (!paragraphRef.current) return;
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    const visible = entries.filter(e => e.isIntersecting);
-    if (!visible.length) return;
+      const rect = paragraphRef.current.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
 
-    const closest = visible.reduce((prev, curr) => {
-      const prevDist =
-        Math.abs(prev.boundingClientRect.top +
-        prev.boundingClientRect.height / 2 -
-        viewportCenter);
+      // Define scroll window
+      const start = viewportHeight * 0.8;
+      const end = viewportHeight * 0.2;
 
-      const currDist =
-        Math.abs(curr.boundingClientRect.top +
-        curr.boundingClientRect.height / 2 -
-        viewportCenter);
+      const progress =
+        (start - rect.top) / (rect.height + start - end);
 
-      return currDist < prevDist ? curr : prev;
-    });
+      // Clamp 0 → 1
+      const clamped = Math.min(Math.max(progress, 0), 1);
 
-    const index = Number(closest.target.dataset.index);
-    setActiveIndex(index);
-  },
-  {
-    threshold: 0.3,
-    rootMargin: "-30% 0px -30% 0px"
-  }
-);
+      // Map progress to word index
+      const index = Math.floor(clamped * words.length);
 
+      setActiveIndex(index);
+    };
 
-  targets.forEach((el) => observer.observe(el));
-  return () => observer.disconnect();
-}, []);
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
 
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [words.length]);
 
   return (
     <section className="relative bg-black py-10 text-white overflow-hidden">
@@ -48,7 +48,7 @@ const observer = new IntersectionObserver(
       <div
         className="
           absolute top-0 left-0 w-full h-125
-          bg-[url('/assets/images/retouch.jpg')]
+          fill-black
           bg-cover
           bg-position-[50%_35%]
           z-0
@@ -70,14 +70,7 @@ const observer = new IntersectionObserver(
       {/* Content */}
       <div className="relative z-20 wrapper text-center">
         {/* Title */}
-        <h2
-          className="
-            text-[36px] md:text-[50px]
-            font-semibold
-            tracking-widest
-            mb-16
-          "
-        >
+        <h2 className="text-[36px] md:text-[50px] font-semibold tracking-widest mb-16">
           About Us
         </h2>
 
@@ -86,64 +79,53 @@ const observer = new IntersectionObserver(
           <AboutCarousel />
         </div>
 
-        {/* Paragraph A + B */}
+        {/* PARAGRAPH 1 — WORD BY WORD (BIDIRECTIONAL) */}
         <p
+          ref={paragraphRef}
           className="
             max-w-300
             mx-auto
             text-[24px] md:text-[38px]
             leading-[1.15]
-            mb-16
+            mb-10
+            flex flex-wrap justify-center gap-x-2
           "
         >
-          <span
-            data-index="0"
-            className={`
-              about-sentence
-              transition-opacity-transform duration-800 ease-in-out
-              ${activeIndex === 0 ? "opacity-100 " : "opacity-15 scale-100"}
-            `}
-          >
-            We are TIGRID, a trailblazing IT company headquartered in the dynamic hub
-            of TechnoPark, Trivandrum. With a visionary and passionate team of experts,
-            we proudly stand as the foremost branding and development company in Kerala.
-          </span>
-
-          <span
-            data-index="1"
-            className={`
-              about-sentence mt-5
-              transition-opacity duration-150 ease-in-out
-              ${activeIndex === 1 ? "opacity-100" : "opacity-15"}
-            `}
-          >
-              At TIGRID, we don't just provide services; we craft digital experiences.
-            We take pride in continuing to offer technical and digital solutions for
-            business worldwide.
-          </span>
+          {words.map((word, i) => (
+            <span
+              key={i}
+              className={`
+                transition-all duration-300 ease-out
+                ${i <= activeIndex ? "opacity-100" : "opacity-20"}
+              `}
+            >
+              {word}
+            </span>
+          ))}
         </p>
 
-        {/* Paragraph C */}
+        {/* PARAGRAPH 2 — APPEARS / DISAPPEARS CLEANLY */}
         <p
-          data-index="2"
           className={`
-            about-sentence
             max-w-300
             mx-auto
             text-[24px] md:text-[38px]
             leading-[1.15]
-            mb-20
-            transition-opacity duration-800 ease-in-out
-            ${activeIndex ===  2 ? "opacity-100" : "opacity-15"}
+            transition-opacity duration-500 ease-out
+            ${
+              activeIndex >= words.length - 1
+                ? "opacity-60"
+                : "opacity-0"
+            }
           `}
         >
-          Choose us as your trusted partner for comprehensive IT services
-          that drive success.
+          {paragraphTwo}
         </p>
 
-        {/* ✅ Read More CTA (RESTORED) */}
+        {/* CTA */}
         <button
           className="
+            mt-20
             px-10 py-4
             rounded-[20px]
             bg-[rgba(241,89,37,0.13)]
