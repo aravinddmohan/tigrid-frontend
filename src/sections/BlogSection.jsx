@@ -66,12 +66,13 @@ const BlogSection = () => {
       </div>
 
       {/* SWIPER */}
-      <div className="px-10">
+      <div className="px-10 overflow-hidden">
         <Swiper
           modules={[Autoplay]}
           spaceBetween={40}
           slidesPerView={3}
           loop={true}
+          loopFillGroupWithBlank={true}
 
           autoplay={{
             delay: 2000,

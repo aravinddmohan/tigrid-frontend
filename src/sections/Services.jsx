@@ -1,4 +1,4 @@
-import ServiceCard from "../components/ServiceCard";
+import ServiceCard from "../components/serviceCard";
 import Button from "../components/Button";
 
 const Services = () => {

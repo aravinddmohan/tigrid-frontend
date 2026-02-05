@@ -20,9 +20,9 @@ const AboutUs = () => {
       const rect = paragraphRef.current.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
 
-      // Define scroll window
-      const start = viewportHeight * 0.9;
-      const end = viewportHeight * 0.2;
+      // Define scroll window offset
+      const start = viewportHeight * 1.5;
+      const end = viewportHeight * 0.1;
 
       const progress =
         (start - rect.top) / (rect.height + start - end);
@@ -114,7 +114,7 @@ const AboutUs = () => {
             transition-opacity duration-500 ease-out
             ${
               activeIndex >= words.length - 1
-                ? "opacity-60"
+                ? "opacity-100"
                 : "opacity-0"
             }
           `}

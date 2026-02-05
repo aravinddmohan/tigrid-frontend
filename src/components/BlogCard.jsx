@@ -1,6 +1,6 @@
 const BlogCard = ({ blog }) => {
   return (
-    <div className="relative w-full max-w-[460px] h-[400px] rounded-[24px] p-[1px] group transition-all duration-500 cursor-pointer">
+    <div className="relative w-full max-w-[460px] h-[420px] rounded-[24px] p-[1px] overflow-hidden group transition-all duration-500 cursor-pointer">
 
       {/* glow */}
       <div className="absolute inset-0 rounded-[26px] bg-gradient-to-b from-orange-500/20 via-zinc-800/20 to-transparent opacity-0 group-hover:opacity-100 blur-xl transition duration-500"></div>

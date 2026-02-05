@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 const FAQItem = ({ item, isOpen, onToggle, onClose }) => {
   const ref = useRef();
 
+  // automatic close
   useEffect(() => {
     const handleMove = (e) => {
       if (ref.current && !ref.current.contains(e.target)) {
@@ -21,37 +22,62 @@ const FAQItem = ({ item, isOpen, onToggle, onClose }) => {
     <div
       ref={ref}
       className="
-      w-[520px]
-      rounded-[22px]
-      border border-[#F8BF5B]/40
-      bg-black/40 backdrop-blur-xl
-      px-6 py-5
-      transition-all duration-500
+        w-full
+        max-w-[520px]
+        rounded-[22px]
+        border border-[#F8BF5B]/40
+        bg-black/40 backdrop-blur-xl
+        px-5 sm:px-6
+        py-4 sm:py-5
+        transition-all duration-500
       "
     >
-      {/* header */}
+      {/* HEADER */}
       <div
         onClick={onToggle}
-        className="flex items-center justify-between cursor-pointer"
+        className="
+          flex items-center justify-between
+          cursor-pointer gap-4
+        "
       >
-        <h4 className="text-white tracking-[0.18em] text-sm">
+        <h4
+          className="
+            text-white
+            tracking-[0.12em]
+            text-xs sm:text-sm md:text-[15px]
+            leading-relaxed
+            pr-4
+          "
+        >
           {item.q}
         </h4>
 
-        {/* close */}
-        <div className="text-white text-2xl">
+        {/* PLUS / CLOSE */}
+        <div className="text-white text-xl sm:text-2xl flex-shrink-0">
           {isOpen ? "×" : "+"}
         </div>
       </div>
 
-      {/* answer */}
+      {/* ANSWER */}
       <div
         className={`
-        overflow-hidden transition-all duration-500
-        ${isOpen ? "max-h-[200px] mt-4 opacity-100" : "max-h-0 opacity-0"}
+          overflow-hidden
+          transition-all duration-500 ease-in-out
+          ${
+            isOpen
+              ? "max-h-[400px] sm:max-h-[260px] mt-4 opacity-100"
+              : "max-h-0 opacity-0"
+          }
         `}
       >
-        <p className="text-white/70 text-sm leading-relaxed tracking-[0.1em]">
+        <p
+          className="
+            text-white/70
+            text-xs sm:text-sm
+            leading-relaxed
+            tracking-[0.05em]
+          "
+        >
           {item.a}
         </p>
       </div>

@@ -59,9 +59,9 @@ const Navbar = () => {
         ))}
       </ul>
 
-      {/* RIGHT : CTA (DESKTOP) + HAMBURGER (MOBILE/TABLET) */}
+      {/* Righ : CTA (DESKTOP)  + HAMBURGER (MOBILE/TABLET) */}
       <div className="flex items-center gap-4 flex-shrink-0">
-        {/* DESKTOP CTA */}
+        {/* Desktop CTA */}
         <button
           className="
             hidden lg:block
@@ -94,7 +94,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* MOBILE MENU */}
+      {/* MOBILE Menu */}
       {open && (
         <div
           className="
