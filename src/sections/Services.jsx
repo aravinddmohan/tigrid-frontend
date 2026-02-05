@@ -1,8 +1,9 @@
 import ServiceCard from "../components/ServiceCard";
+import Button from "../components/Button";
 
 const Services = () => {
   return (
-    <section className="relative w-full py-32 overflow-hidden">
+    <section className="relative w-full py-16 overflow-hidden">
 
       {/* Background image */}
       <div className="absolute inset-0 bg-[url('/assets/services/services-bg.jpg')] bg-cover bg-center opacity-50" />
@@ -14,12 +15,12 @@ const Services = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-6">
 
         {/* Heading */}
-        <h2 className="text-center text-[50px] font-semibold tracking-widest text-white">
+        <h2 className="text-center text-[38px] md:text-[44px] font-semibold tracking-widest text-white">
           What We Do?
         </h2>
 
         {/* Sub text */}
-        <p className="mt-6 text-center text-sm tracking-[0.15em] text-white/80 max-w-4xl mx-auto">
+        <p className="mt-4 text-center text-sm tracking-[0.15em] text-white/80 max-w-4xl mx-auto">
           We provide customized digital solutions that enhance business performance,
           strengthen brand identity, and streamline operations with precision and expertise.
         </p>
@@ -55,21 +56,10 @@ const Services = () => {
           />
         </div>
            {/* View All Button */}
-<div className="mt-28 flex justify-center">
-  <button className=" px-16 py-4
-    rounded-full
-    text-sm tracking-[0.2em]
-    text-white
-    bg-white/5
-    backdrop-blur-xl
-    border border-[#F15925]/40
-    shadow-[0_-4px_7.7px_rgba(180,67,30,0.3),0_2px_6px_rgba(241,89,37,0.2),inset_0_4px_16.5px_rgba(221,81,35,0.18)]
-    transition-all duration-300
-    hover:shadow-[0_0_40px_rgba(241,89,37,0.35)]
-    hover:scale-105
-  ">
-    VIEW ALL
-  </button>
+<div className="mt-16 flex justify-center">
+ <Button 
+    text="VIEW ALL" 
+  />
 </div>
 
       </div>

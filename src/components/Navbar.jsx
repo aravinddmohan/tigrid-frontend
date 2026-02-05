@@ -26,7 +26,7 @@ const Navbar = () => {
         ${isScrolled ? "border-white/20" : "border-white/0"}
       `}
     >
-      {/* LEFT : LOGO */}
+      {/* LOGO */}
       <div className="flex-shrink-0">
         <img
           src="/assets/images/tigrid-logo.png"
@@ -35,7 +35,7 @@ const Navbar = () => {
         />
       </div>
 
-      {/* CENTER : DESKTOP NAV (SHOW LATE) */}
+      {/* CENTER : DESKTOP NAV */}
       <ul className="hidden lg:flex gap-6 xl:gap-10">
         <li className="font-extrabold text-white text-[16px] tracking-widest">
           Home

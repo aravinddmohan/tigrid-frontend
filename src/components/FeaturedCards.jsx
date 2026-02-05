@@ -1,54 +1,86 @@
 const FeaturedCards = ({ index, title, description, image, tags }) => {
   return (
-    <div className="min-h-screen flex items-center justify-center">
+    <section className="w-full bg-black py-24 flex justify-center">
+
+      {/* GLASS CARD */}
       <div
-        className="relative w-[1574px] h-[838px] rounded-[50px] backdrop-blur-xl"
+        className="relative w-[88%] max-w-[1050px] rounded-[40px] backdrop-blur-xl"
         style={{
           background:
-            "linear-gradient(180deg, rgba(255,255,255,0.04), rgba(153,153,153,0.04))",
-          borderImage:
-            "linear-gradient(274.55deg, rgba(248,191,91,0.2) 12.74%, rgba(248,191,91,0.2) 32.81%, rgba(248,191,91,0.3) 47.79%, rgba(248,191,91,0.8) 55.93%, rgba(248,191,91,0.03) 75.05%) 1",
-          borderWidth: "1px",
+            "linear-gradient(180deg, rgba(255,255,255,0.05), rgba(153,153,153,0.05))",
+          border: "1px solid",
+          borderImageSlice: 1,
+          borderImageSource:
+            "linear-gradient(273deg, rgba(230,170,0,0), rgba(248,191,0,0.65), rgba(248,191,0,0))",
         }}
       >
-        {/* Background Image */}
+
+        {/* IMAGE */}
         <img
           src={image}
           alt={title}
-          className="absolute inset-[70px] w-[1434px] h-[698px] object-cover rounded-[50px]"
+          className="absolute inset-[26px] w-[calc(100%-52px)] h-[calc(100%-52px)] object-cover rounded-[26px]"
         />
 
-        {/* Content */}
-        <div className="relative z-10 h-full flex flex-col justify-between p-[70px]">
-          {/* Index */}
-          <div className="text-white/80 text-sm tracking-wide">
+        {/* DARK GRADIENT */}
+        <div className="absolute inset-[26px] rounded-[26px] bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+
+        {/* CONTENT LAYER  */}
+        <div className="
+          relative z-10
+          min-h-[480px]
+          sm:min-h-[520px]
+          lg:min-h-[560px]
+        ">
+
+          {/* INDEX */}
+          <div className="absolute top-8 left-12 text-white/70 text-sm tracking-wide">
             {index}
           </div>
 
-          {/* Text */}
-          <div className="max-w-[594px]">
-            <h2 className="text-white text-4xl font-semibold mb-4">
-              {title}
-            </h2>
-            <p className="text-white/80 text-base leading-[21px]">
-              {description}
-            </p>
-          </div>
+          {/* BOTTOM CONTENT */}
+          <div className="
+            absolute 
+            bottom-10 sm:bottom-12 lg:bottom-14
+            left-12 right-12 
+            flex items-end justify-between
+          ">
 
-          {/* Tags */}
-          <div className="flex gap-4 self-end">
-            {tags.map((tag) => (
-              <button
-                key={tag}
-                className="w-[196px] h-[43px] rounded-[20px] backdrop-blur-md bg-black/5 border border-white/10 text-white text-[16px] tracking-[0.15em] capitalize hover:bg-white/10 transition"
+            {/* LEFT TEXT */}
+            <div className="max-w-md">
+              <h2 className="text-white text-3xl md:text-4xl font-semibold mb-3">
+                {title}
+              </h2>
+
+              <p className="text-white/80 text-sm md:text-base leading-[1.6]">
+                {description}
+              </p>
+            </div>
+
+            {/* RIGHT TAGS */}
+            <div className="flex justify-end">
+              <div
+                className={`grid gap-3 ${
+                  tags.length > 2
+                    ? "grid-cols-2"
+                    : "grid-cols-1 sm:grid-cols-2"
+                }`}
               >
-                {tag}
-              </button>
-            ))}
+                {tags.map((tag) => (
+                  <button
+                    key={tag}
+                    className="px-5 py-2 rounded-full backdrop-blur-md bg-black/25 border border-white/15 text-white text-sm tracking-wider hover:bg-white/10 transition whitespace-nowrap"
+                  >
+                    {tag}
+                  </button>
+                ))}
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

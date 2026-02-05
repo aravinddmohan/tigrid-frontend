@@ -21,7 +21,7 @@ const AboutUs = () => {
       const viewportHeight = window.innerHeight;
 
       // Define scroll window
-      const start = viewportHeight * 0.8;
+      const start = viewportHeight * 0.9;
       const end = viewportHeight * 0.2;
 
       const progress =
@@ -79,7 +79,7 @@ const AboutUs = () => {
           <AboutCarousel />
         </div>
 
-        {/* PARAGRAPH 1 — WORD BY WORD (BIDIRECTIONAL) */}
+        {/* PARAGRAPH 1 */}
         <p
           ref={paragraphRef}
           className="
@@ -104,7 +104,7 @@ const AboutUs = () => {
           ))}
         </p>
 
-        {/* PARAGRAPH 2 — APPEARS / DISAPPEARS CLEANLY */}
+        {/* PARAGRAPH 2 */}
         <p
           className={`
             max-w-300

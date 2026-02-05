@@ -73,16 +73,3 @@
     @apply fixed top-0 left-0 w-full h-full grid place-items-center backdrop-blur-md bg-black/50;
   }
 }
-/* Marquee animation */
-@keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.marquee {
-  animation: marquee 30s linear infinite;
-}

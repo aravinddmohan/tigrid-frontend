@@ -22,7 +22,7 @@ const AboutCarousel = () => {
   const itemCount = images.length;
   const angle = 360 / itemCount;
   const radius = window.innerWidth < 640 ? 160 : window.innerWidth < 1024 ? 220 : 280;
- // depth of the circle
+  {/*depth circle*/}
 
   return (
     <div className="relative w-full flex justify-center items-center" style={{

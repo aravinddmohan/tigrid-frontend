@@ -5,7 +5,7 @@ export const featuredWorks = [
     title: "Vektas",
     description:
       "Vektas Technologies Private Limited officially founded in July 2022, is a dynamic force in the technology landscape, specializing in the evolution of drone technologies and their…",
-    image: "/assets/images/vektas.png",
+    image: "/assets/featured/vectas.png",
     tags: ["Branding", "Fashion"],
   },
   {
@@ -14,7 +14,7 @@ export const featuredWorks = [
     title: "ESIGN",
     description:
       "ESIGN, a prominent player in the Tours and Travels documentation industry, partnered with Tigrid to reimagine its branding and online footprint.",
-    image: "/assets/images/esign.png",
+    image: "/assets/featured/esign.png",
     tags: ["Tourism"],
   },
   {
@@ -23,8 +23,8 @@ export const featuredWorks = [
     title: "Foodle",
     description:
       "Foodle lies in the seamless fusion of food and fashion. We believe both are essential ingredients in life’s rich tapestry.",
-    image: "/assets/images/foodle.png",
-    tags: ["Branding", "Digital Marketing", "Website Development"],
+    image: "/assets/featured/foodle.png",
+    tags: ["Branding", "Digital Marketing", "Website Development","Social Media Marketing"],
   },
   {
     id: 4,
@@ -32,7 +32,8 @@ export const featuredWorks = [
     title: "Oktobr",
     description:
       "Oktobr, a rising premium fashion brand, partnered with Tigrid to craft a captivating identity that resonates with elegance and modernity.",
-    image: "/assets/images/oktobr.png",
+    image: "/assets/featured/octobr.png",
     tags: ["Branding", "Fashion"],
   },
 ];
+export default featuredWorks
