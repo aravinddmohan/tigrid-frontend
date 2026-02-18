@@ -113,7 +113,8 @@ const AboutUs = () => {
             leading-[1.15]
             transition-opacity duration-500 ease-out
             ${
-              activeIndex >= words.length - 1
+              activeIndex >= words.length * 0.9
+
                 ? "opacity-100"
                 : "opacity-0"
             }

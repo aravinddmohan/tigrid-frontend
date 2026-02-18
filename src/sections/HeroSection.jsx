@@ -19,7 +19,7 @@ const HeroSection = () => {
           DIGITAL SOLUTIONS
         </h1>
 
-        <div className="mt-8 flex justify-center gap-8">
+        <div className="mt-8 flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8">
           <button
   className="
     px-10 py-4

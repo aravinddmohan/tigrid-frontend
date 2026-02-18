@@ -1,11 +1,11 @@
 import Marquee from "react-fast-marquee";
 
 const brands = [
-  "/assets/brands/airport 2.svg",
-  "/assets/brands/cghs2.svg",
-  "/assets/brands/jacca 2.svg",
-  "/assets/brands/metro 2.svg",
-  "/assets/brands/mhfw.svg",
+  "/assets/brands/airport2.png",
+  "/assets/brands/cghs2.png",
+  "/assets/brands/jacca2.svg",
+  "/assets/brands/metro2.png",
+  "/assets/brands/mhfw.png",
   "/assets/brands/dbuilders.png",
   "/assets/brands/oktobr.png",
 ];
@@ -24,25 +24,14 @@ const Brands = () => {
 
         {/*  CENTER BRIGHTNESS LAYER  */}
 <div
-  className="pointer-events-none absolute inset-0 z-20"
-  style={{
-    background:
-      "linear-gradient(90deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.85) 25%, rgba(255,255,255,0.25) 50%, rgba(0,0,0,0.85) 72%, rgba(0,0,0,0.95) 100%)",
-    mixBlendMode: "overlay",
-  }}
-/>
+  className="pointer-events-none absolute inset-0 z-10 flex justify-center">
+    <div className="w-[40%] h-full bg-white/10 blur-3xl opacity-20" />
+</div>
 
 
         {/*  mask smooth fade */}
-        <div
-          style={{
-            maskImage:
-              "linear-gradient(to right, transparent 0%, white 20%, white 80%, transparent 100%)",
-            WebkitMaskImage:
-              "linear-gradient(to right, transparent 0%, white 20%, white 80%, transparent 100%)",
-          }}
-        >
-          <Marquee speed={60} gradient={true} pauseOnHover={true}>
+        <div>
+          <Marquee speed={60} gradient={false} pauseOnHover={true}>
             {brands.map((src, i) => (
               <div key={i} className="mx-20">
                 <img

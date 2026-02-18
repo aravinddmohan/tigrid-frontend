@@ -12,20 +12,22 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`
-        fixed top-4 left-1/2 -translate-x-1/2 z-50
-        w-[92%] max-w-360
-        px-4 sm:px-6 md:px-10 py-3
-        rounded-[20px]
-        flex items-center justify-between
-        bg-black/30 backdrop-blur-xl
-        border border-white/10
-        shadow-lg
-        transition-all duration-300
-        will-change-[backdrop-filter]
-        ${isScrolled ? "border-white/20" : "border-white/0"}
-      `}
-    >
+  className={`
+    fixed top-4 left-0 right-0 z-50
+    mx-auto
+    w-[92%] max-w-[1100px]
+    px-4 sm:px-6 md:px-10 py-3
+    rounded-[20px]
+    flex items-center justify-between
+    bg-black/30 backdrop-blur-xl
+    border border-white/10
+    shadow-lg
+    transition-all duration-300
+    will-change-[backdrop-filter]
+    ${isScrolled ? "border-white/20" : "border-white/0"}
+  `}
+>
+
       {/* LOGO */}
       <div className="flex-shrink-0">
         <img

@@ -8,11 +8,11 @@ const Services = () => {
       {/* Background image */}
       <div className="absolute inset-0 bg-[url('/assets/services/services-bg.jpg')] bg-cover bg-center opacity-50" />
 
-      {/* Dark overlay */}
+      {/* overlay*/}
       <div className="absolute inset-0 bg-black/70" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
 
         {/* Heading */}
         <h2 className="text-center text-[38px] md:text-[44px] font-semibold tracking-widest text-white">
@@ -26,7 +26,7 @@ const Services = () => {
         </p>
 
         {/* Service Cards */}
-        <div className="mt-24 space-y-20">
+        <div className="mt-23 space-y-20">
           <ServiceCard
             number="01"
             title="Application Development"
@@ -43,7 +43,7 @@ const Services = () => {
 
           <ServiceCard
             number="03"
-            title="Branding & Designing"
+            title="Branding and Designing"
             items={["Web App", "Mobile App", "Hybrid App"]}
             image="/assets/services/branding.png"
           />

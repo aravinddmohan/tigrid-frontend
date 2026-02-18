@@ -2,44 +2,58 @@ const CTASection = () => {
   return (
     <section className="relative w-full h-[90vh] flex items-center justify-center text-center overflow-hidden bg-black">
 
-      {/* background image */}
+      {/* bg */}
       <img
-        src="/assets/images/finalcta-bg.png" 
+        src="/assets/images/finalcta-bg.png"
         alt="cta"
         className="absolute inset-0 w-full h-full object-cover"
       />
 
-      {/* dark overlay */}
+      {/* overlay */}
       <div className="absolute inset-0 bg-black/40" />
 
       {/* content */}
       <div className="relative z-10 max-w-3xl px-6">
 
+        {/* ===== MOBILE TITLE ===== */}
         <h2 className="
-          text-white 
-          font-semibold
-          text-[75px] md:text-[42px] 
-          leading-[1.3] 
-          tracking-[0.15em] 
-          font-light 
+          text-white font-bold
+          text-[34px] leading-[1.3] tracking-[0.15em]
+          mb-10
+          md:hidden
+        ">
+          Ready to Elevate <br/>
+          Your <br/>
+          Brand With <br/>
+          Next-Gen <br/>
+          Innovation?
+        </h2>
+
+        {/* ===== DESKTOP/TAB TITLE (your original) ===== */}
+        <h2 className="
+          hidden md:block
+          text-white font-bold
+          md:text-[42px]
+          leading-[1.3] tracking-[0.15em]
           mb-12
         ">
           Ready to Elevate Your Brand <br/>
           with Next-Gen Innovation?
         </h2>
 
+        {/* paragraph */}
         <p className="
           text-white/80 
-          text-[11px] md:text-[13px] 
-          leading-[1.3] 
-          tracking-[0.22em] 
+          text-[12px] md:text-[13px] 
+          leading-[1.4] 
+          tracking-[0.2em] 
           text-center
           max-w-[560px]
           mx-auto
-          mb-13
+          mb-12
         ">
-          Let’s Transform Your Ideas Into Powerful Digital Solutions
-          Designed For Scale, Performance, And Impact.
+          Let’s transform your ideas into powerful digital solutions
+          designed for scale, performance, and impact.
         </p>
 
         {/* button */}

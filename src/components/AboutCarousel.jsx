@@ -21,7 +21,8 @@ const AboutCarousel = () => {
 }, []);
   const itemCount = images.length;
   const angle = 360 / itemCount;
-  const radius = window.innerWidth < 640 ? 160 : window.innerWidth < 1024 ? 220 : 280;
+  const radius =
+  window.innerWidth < 640 ? 240 : window.innerWidth < 1024 ? 320 : 420;
   {/*depth circle*/}
 
   return (
@@ -54,10 +55,9 @@ const AboutCarousel = () => {
                 `,
               }}
             >
-              <img
-                src={`/assets/images/${img}`}
-                alt=""
-                className=" h-[160px] sm:h-[200px] md:h-[240px] object-contain rounded-xl"/>
+              <div className="w-[220px] h-[160px] sm:w-[260px] sm:h-[200px] md:w-[300px] md:h-[240px] flex items-center justify-center overflow-hidden rounded-xl bg-black/20">
+                <img src={`/assets/images/${img}`} alt="" className="w-full h-full object-cover"/>
+              </div>
             </div>
           ))}
         </div>

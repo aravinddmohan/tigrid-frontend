@@ -1,11 +1,11 @@
 const TestimonialCard = ({ t }) => {
   return (
-    <div className="w-[360px] md:w-[420px] flex-shrink-0 mx-4">
+    <div className="w-[360px] md:w-[420px] h-[260px] md:h-[280px] flex-shrink-0 mx-4">
 
       {/* gradient border */}
       <div
         className="
-        rounded-[28px] p-[1px]
+        rounded-[28px] p-[1px] h-full
         bg-[linear-gradient(274deg,
           rgba(248,191,91,0.6),
           rgba(248,191,91,0.15),
@@ -21,6 +21,8 @@ const TestimonialCard = ({ t }) => {
           py-6 px-6
           border border-white/10
           shadow-[0_0_40px_rgba(0,0,0,0.6)]
+          h-full
+          flex flex-col
           "
         >
           {/* top */}
@@ -65,10 +67,11 @@ const TestimonialCard = ({ t }) => {
           <p
             className="
             text-white/80
-            leading-[1.75]
-            tracking-[0.07em]
+            leading-[1.7]
+            tracking-[0.06em]
             text-[13px]
-            max-w-[85%]
+            mt-4
+            line-clamp-4
             "
           >
             {t.text}

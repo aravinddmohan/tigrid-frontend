@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import FeaturedCards from "../components/FeaturedCards";
@@ -34,7 +35,7 @@ const FeaturedWorks = () => {
         {featuredWorks.map((card, index) => {
           const y = useTransform(
             scrollYProgress,
-            [index * 0.25, 1],
+            [index * 0.25, 1.5],
             [0, -140 * index]
           );
 

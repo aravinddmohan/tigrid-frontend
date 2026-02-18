@@ -23,7 +23,6 @@ const FAQItem = ({ item, isOpen, onToggle, onClose }) => {
       ref={ref}
       className="
         w-full
-        max-w-[520px]
         rounded-[22px]
         border border-[#F8BF5B]/40
         bg-black/40 backdrop-blur-xl

@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
 const ServiceCard = ({ number, title, items, image }) => {
@@ -20,17 +21,17 @@ const ServiceCard = ({ number, title, items, image }) => {
   "
 >
     {/* LEFT */}
-    <div className="flex-1 flex gap-10 items-start">
+    <div className="flex-1 flex flex-col md:flex-row gap-4 md:gap-14 lg:gap-20">
 
       {/* NUMBER */}
-      <div className="pt-1">
+      <div className="pt-1 md:mr-12">
         <span className="text-[38px] tracking-[0.05em] text-white/70 leading-none">
           {number}
         </span>
       </div>
 
       {/* TEXT */}
-      <div>
+      <div className=" flex flex-col items-start">
         <h3 className="text-[28px] md:text-[32px] font-semibold tracking-[0.08em] text-white leading-tight">
           {title}
         </h3>
@@ -40,15 +41,25 @@ const ServiceCard = ({ number, title, items, image }) => {
             <li key={i}>{item}</li>
           ))}
         </ul>
+        {/* IMAGE for mobile */}
 
-        <button className="mt-6 inline-flex items-center gap-3 px-7 py-2 rounded-full border border-white/40 text-sm text-white transition hover:border-white">
+        <div className="w-full flex justify-center my-8 md:hidden">
+          <img
+            src={image}
+            alt={title}
+            className="max-h-[150px] object-contain"
+          />
+        </div>
+
+        <button className="mt-6 group relative inline-flex items-center justify-center w-[150px] h-[34px] text-[13px]   md:w-full max-w-[220px] h-[40px] rounded-full border border-white/40  text-white text-[16px] tracking-wide transition-all duration-300 hover:border-white">
           Explore
+          <span className="absolute right-6 text-[22px] transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-0 hover:shadow-[0_0_20px_rgba(255,255,255,0.03)] ">↗</span>
         </button>
       </div>
     </div>
 
     {/* RIGHT IMAGE */}
-    <div className="w-full md:w-[300px] flex items-center justify-center p-4">
+    <div className="hidden md:flex md:w-[300px] items-center justify-center p-4">
       <img
         src={image}
         alt={title}
