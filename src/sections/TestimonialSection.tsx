@@ -1,8 +1,9 @@
 import Marquee from "react-fast-marquee";
 import TestimonialCard from "../components/TestimonialCard";
+import type { Testimonial } from "../components/TestimonialCard";
 
 /* dummy data */
-const testimonials = [
+const testimonials: Testimonial[] = [
   {
     id: 1,
     name: "Ajmal Ansar",
@@ -42,7 +43,6 @@ const TestimonialSection = () => {
       <div className="absolute inset-0 bg-black/70"></div>
 
       <div className="relative z-10">
-
         {/* heading */}
         <div className="text-center mb-20 px-6">
           <h2 className="text-white text-[42px] md:text-[50px] font-semibold tracking-[0.12em] mb-6">
@@ -50,27 +50,24 @@ const TestimonialSection = () => {
           </h2>
 
           <p className="text-white/70 text-[14px] md:text-[16px] tracking-[0.15em] max-w-4xl mx-auto">
-            Explore the influence of our services by delving into the heartfelt testimonials of our satisfied customers.
+            Explore the influence of our services by delving into the heartfelt
+            testimonials of our satisfied customers.
           </p>
         </div>
 
         {/* marquee */}
-        <Marquee
-          pauseOnHover
-          speed={30}
-          gradient={false}>
-        <div className="flex gap-1 items-stretch">
-          {testimonials.map((t) => (
-            <TestimonialCard key={t.id} t={t} />
-          ))}
+        <Marquee pauseOnHover speed={30} gradient={false}>
+          <div className="flex gap-1 items-stretch">
+            {testimonials.map((t) => (
+              <TestimonialCard key={t.id} t={t} />
+            ))}
 
-          {/* udplicate infinite loop */}
-          {testimonials.map((t) => (
-            <TestimonialCard key={`dup-${t.id}`} t={t} />
-          ))}
-        </div>
+            {/* udplicate infinite loop */}
+            {testimonials.map((t) => (
+              <TestimonialCard key={`dup-${t.id}`} t={t} />
+            ))}
+          </div>
         </Marquee>
-
       </div>
     </section>
   );

@@ -1,4 +1,13 @@
-export const featuredWorks = [
+export type FeaturedWork = {
+  id: number;
+  index: string;
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+};
+
+export const featuredWorks: FeaturedWork[] = [
   {
     id: 1,
     index: "1 / 4",
@@ -24,7 +33,12 @@ export const featuredWorks = [
     description:
       "Foodle lies in the seamless fusion of food and fashion. We believe both are essential ingredients in life’s rich tapestry.",
     image: "/assets/featured/foodle.png",
-    tags: ["Branding", "Digital Marketing", "Website Development","Social Media Marketing"],
+    tags: [
+      "Branding",
+      "Digital Marketing",
+      "Website Development",
+      "Social Media Marketing",
+    ],
   },
   {
     id: 4,
@@ -36,4 +50,4 @@ export const featuredWorks = [
     tags: ["Branding", "Fashion"],
   },
 ];
-export default featuredWorks
+export default featuredWorks;

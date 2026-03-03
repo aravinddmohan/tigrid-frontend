@@ -26,15 +26,17 @@ const FAQSection = () => {
   return (
     <section className="bg-black py-32 px-10 sm:py-28 px-6 sm:px-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 items-start">
-
         {/* left */}
         <div>
           <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[0.12em] sm:tracking-[0.15em] mb-5 sm:mb-6">
-            Frequently Asked<br />Questions
+            Frequently Asked
+            <br />
+            Questions
           </h2>
 
           <p className="text-white/70 text-sm sm:text-base md:text-[15px] tracking-[0.03em] capitalize">
-            Have questions? Our FAQ section has you covered with quick answers to the most common inquiries.
+            Have questions? Our FAQ section has you covered with quick answers
+            to the most common inquiries.
           </p>
         </div>
 
@@ -50,7 +52,6 @@ const FAQSection = () => {
             />
           ))}
         </div>
-
       </div>
     </section>
   );

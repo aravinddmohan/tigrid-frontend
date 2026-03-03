@@ -1,21 +1,33 @@
 import { useEffect, useRef } from "react";
 
-const FAQItem = ({ item, isOpen, onToggle, onClose }) => {
-  const ref = useRef();
+type FAQ = {
+  q: string;
+  a: string;
+};
+
+type FAQItemProps = {
+  item: FAQ;
+  isOpen: boolean;
+  onToggle: () => void;
+  onClose: () => void;
+};
+
+const FAQItem = ({ item, isOpen, onToggle, onClose }: FAQItemProps) => {
+  const ref = useRef<HTMLDivElement>(null);
 
   // automatic close
   useEffect(() => {
-    const handleMove = (e) => {
-      if (ref.current && !ref.current.contains(e.target)) {
+    const handleMove = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
         onClose();
       }
     };
 
     if (isOpen) {
-      document.addEventListener("mousemove", handleMove);
+      document.addEventListener("mousedown", handleMove);
     }
 
-    return () => document.removeEventListener("mousemove", handleMove);
+    return () => document.removeEventListener("mousedown", handleMove);
   }, [isOpen, onClose]);
 
   return (

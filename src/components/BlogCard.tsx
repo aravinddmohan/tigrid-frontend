@@ -1,13 +1,22 @@
-const BlogCard = ({ blog }) => {
+type Blog = {
+  id: number;
+  title: string;
+  date: string;
+  read: string;
+  image: string;
+};
+
+type BlogCardProps = {
+  blog: Blog;
+};
+const BlogCard = ({ blog }: BlogCardProps) => {
   return (
     <div className="relative w-full max-w-[460px] h-[420px] rounded-[24px] p-[1px] overflow-hidden group transition-all duration-500 cursor-pointer">
-
       {/* glow */}
       <div className="absolute inset-0 rounded-[26px] bg-linear-to-b from-orange-500/20 via-zinc-800/20 to-transparent opacity-0 group-hover:opacity-100 blur-xl transition duration-500"></div>
 
       {/* body */}
       <div className="relative h-full w-full rounded-[24px] bg-[#0b0b0b] p-5 flex flex-col justify-between border border-white/5">
-
         {/* image */}
         <div className="w-full flex justify-center pt-4">
           <div className="w-[92%] h-[200px] rounded-[16px] overflow-hidden bg-black">
@@ -30,7 +39,6 @@ const BlogCard = ({ blog }) => {
             <span>{blog.read}</span>
           </div>
         </div>
-
       </div>
     </div>
   );

@@ -1,4 +1,14 @@
-const Button = ({ text = "VIEW ALL", className = "", onClick }) => {
+type ButtonProps = {
+  text?: string;
+  className?: string;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+};
+
+const Button = ({
+  text = "VIEW ALL",
+  className = "",
+  onClick,
+}: ButtonProps) => {
   return (
     <div className={`mt-28 flex justify-center ${className}`}>
       <button

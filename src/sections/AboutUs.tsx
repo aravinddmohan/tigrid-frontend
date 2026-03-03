@@ -3,8 +3,7 @@ import AboutCarousel from "../components/AboutCarousel";
 
 const AboutUs = () => {
   const [activeIndex, setActiveIndex] = useState(-1);
-  const paragraphRef = useRef(null);
-
+  const paragraphRef = useRef<HTMLParagraphElement | null>(null);
   const paragraphOne =
     "We are TIGRID, a trailblazing IT company headquartered in the dynamic hub of TechnoPark, Trivandrum. With a visionary and passionate team of experts, we proudly stand as the foremost branding and development company in Kerala. At TIGRID, we don't just provide services; we craft digital experiences. We take pride in continuing to offer technical and digital solutions for business worldwide.";
 
@@ -24,8 +23,7 @@ const AboutUs = () => {
       const start = viewportHeight * 1.5;
       const end = viewportHeight * 0.1;
 
-      const progress =
-        (start - rect.top) / (rect.height + start - end);
+      const progress = (start - rect.top) / (rect.height + start - end);
 
       // Clamp 0 → 1
       const clamped = Math.min(Math.max(progress, 0), 1);
@@ -112,12 +110,7 @@ const AboutUs = () => {
             text-[24px] md:text-[38px]
             leading-[1.15]
             transition-opacity duration-500 ease-out
-            ${
-              activeIndex >= words.length * 0.9
-
-                ? "opacity-100"
-                : "opacity-0"
-            }
+            ${activeIndex >= words.length * 0.9 ? "opacity-100" : "opacity-0"}
           `}
         >
           {paragraphTwo}

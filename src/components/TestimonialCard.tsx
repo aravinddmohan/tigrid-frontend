@@ -1,7 +1,18 @@
-const TestimonialCard = ({ t }) => {
+export type Testimonial = {
+  id: number;
+  name: string;
+  role: string;
+  rating: number;
+  text: string;
+  image: string;
+};
+type TestimonialCardProps = {
+  t: Testimonial;
+};
+
+const TestimonialCard = ({ t }: TestimonialCardProps) => {
   return (
     <div className="w-[360px] md:w-[420px] h-[260px] md:h-[280px] flex-shrink-0 mx-4">
-
       {/* gradient border */}
       <div
         className="

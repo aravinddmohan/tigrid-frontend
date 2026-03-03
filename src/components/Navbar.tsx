@@ -5,14 +5,14 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 20);
+    const onScroll = (): void => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <nav
-  className={`
+      className={`
     fixed top-4 left-0 right-0 z-50
     mx-auto
     w-[92%] max-w-[1100px]
@@ -26,8 +26,7 @@ const Navbar = () => {
     will-change-[backdrop-filter]
     ${isScrolled ? "border-white/20" : "border-white/0"}
   `}
->
-
+    >
       {/* LOGO */}
       <div className="flex-shrink-0">
         <img
@@ -124,7 +123,7 @@ const Navbar = () => {
               >
                 {item}
               </span>
-            )
+            ),
           )}
 
           <button
